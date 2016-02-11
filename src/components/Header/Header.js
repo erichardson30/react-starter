@@ -25,8 +25,8 @@ class Header extends Component {
             <span className={s.brandTxt}>Your Company</span>
           </Link>
           <div className={s.banner}>
-            <h1 className={s.bannerTitle}>React</h1>
-            <p className={s.bannerDesc}>Complex web apps made easy</p>
+            <h1 className={s.bannerTitle}>React Starter</h1>
+            <p className={s.bannerDesc}>A great starting point for React / Flux apps</p>
           </div>
         </div>
       </div>
