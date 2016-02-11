@@ -29,4 +29,27 @@ you're new to this API, the following article may give you a good introduction:
 
 https://jakearchibald.com/2015/thats-so-fetch/
 
+## Data Fetching with [Axios](https://github.com/mzabriskie/axios)
 
+There is a [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+based `axios` module that can be used to make
+[XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser
+as well as [http](https://nodejs.org/api/http.html) requests from node.js. It automatically
+transforms for JSON data and protects the client side against [XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery)
+
+#### Data fetching to an external API should all take place in the action
+
+```jsx
+import axios from 'axios';
+const url = 'http://jsonplaceholder.typicode.com';
+getData() {
+    try {
+        let response = axios.get(url + '/posts').then((response) => {
+                console.log(response.data);
+                this.getDataSuccess(response.data);
+            });
+        } catch (err) {
+            console.log(err)
+        }
+}
+```

@@ -16,14 +16,9 @@ You can start by cloning the latest version of React Starter Kit (RSK) on your
 local machine by running:
 
 ```shell
-$ git clone -o react-starter-kit -b master --single-branch \
-      https://github.com/kriasoft/react-starter-kit.git MyApp
+$ git clone https://github.com/erichardson30/react-starter.git MyApp
 $ cd MyApp
 ```
-
-Alternatively, you can start a new project based on RSK right from
-[WebStorm IDE](https://www.jetbrains.com/webstorm/help/create-new-project-react-starter-kit.html),
-or by using [Yeoman generator](https://www.npmjs.com/package/generator-react-fullstack).
 
 #### 2. Run `npm install`
 
@@ -99,16 +94,3 @@ to [Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/)
 or [Heroku](https://www.heroku.com/) this way. Both will execute `npm install --production`
 upon receiving new files from you. Note, you should only deploy the contents
 of the `/build` folder to a remote server.
-
-### How to Update
-
-If you need to keep your project up to date with the recent changes made to RSK,
-you can always fetch and merge them from [this repo](https://github.com/kriasoft/react-starter-kit)
-back into your own project by running:
-
-```shell
-$ git checkout master
-$ git fetch react-starter-kit
-$ git merge react-starter-kit/master
-$ npm install
-```
