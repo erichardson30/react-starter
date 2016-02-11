@@ -6,7 +6,7 @@ This React Starter was built from the React Starter Kit by Kriasoft and can be f
 > boilerplate for web development built on top of Facebook's
 > [React](https://facebook.github.io/react/) library,
 > [Node.js](https://nodejs.org/) / [Express](http://expressjs.com/) server
-> and [AltJs](https://alt.js.com) for managing data and implementing
+> and [AltJs](http://alt.js.com) for managing data and implementing
 > the [Flux](http://facebook.github.io/flux/) architecture. Containing
 > modern web development tools such as [Webpack](http://webpack.github.io/),
 > [Babel](http://babeljs.io/) and [BrowserSync](http://www.browsersync.io/).
@@ -59,6 +59,7 @@ This React Starter was built from the React Starter Kit by Kriasoft and can be f
   * [React.js Questions on StackOverflow](http://stackoverflow.com/questions/tagged/reactjs)
   * [React.js Discussion Board](https://discuss.reactjs.org/)
   * [Flux Architecture for Building User Interfaces](http://facebook.github.io/flux/)
+  * [AltJs - A library for managing data within JavaScript applications](http://alt.js.org/)
   * [Jest - Painless Unit Testing](http://facebook.github.io/jest/)
   * [Flow - A static type checker for JavaScript](http://flowtype.org/)
   * [The Future of React](https://github.com/reactjs/react-future)
