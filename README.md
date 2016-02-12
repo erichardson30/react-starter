@@ -1,6 +1,6 @@
 ## React Starter — "isomorphic" web app boilerplate
 
-This React Starter was built from the React Starter Kit by Kriasoft and can be found [here](https://github.com/kriasoft/react-starter-kit)
+This React Starter was based off the React Starter Kit by Kriasoft and can be found [here](https://github.com/kriasoft/react-starter-kit)
 
 > React Starter is an opinionated
 > boilerplate for web development built on top of Facebook's
