@@ -10,6 +10,8 @@
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './LoginPage.scss';
+import TextInput from '../UI/TextInput';
+import Button from '../UI/Button';
 
 const title = 'Log In';
 
@@ -28,7 +30,9 @@ class LoginPage extends Component {
       <div className={s.root}>
         <div className={s.container}>
           <h1>{title}</h1>
-          <p>...</p>
+          <TextInput hintText="Email"/>
+          <TextInput hintText="Password"/>
+          <Button label="Sign in" />
         </div>
       </div>
     );
