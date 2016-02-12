@@ -10,6 +10,8 @@
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './RegisterPage.scss';
+import TextInput from '../UI/TextInput';
+import Button from '../UI/Button';
 
 const title = 'New User Registration';
 
@@ -28,7 +30,10 @@ class RegisterPage extends Component {
       <div className={s.root}>
         <div className={s.container}>
           <h1>{title}</h1>
-          <p>...</p>
+              <TextInput hintText="Email"/>
+              <TextInput hintText="Password"/>
+              <TextInput hintText="Confirm Password"/>
+              <Button label="Sign up" />
         </div>
       </div>
     );

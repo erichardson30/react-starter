@@ -9,7 +9,7 @@
 
  import 'babel-polyfill';
  import React from 'react';
- import { match, RouterContext } from 'react-router';
+ import { match, Router } from 'react-router';
  import { render } from 'react-dom';
  import FastClick from 'fastclick';
  import routes from './routes';
@@ -65,7 +65,7 @@
    match({ routes, location }, (error, redirectLocation, renderProps) => {
      render(
        <ContextHolder context={context}>
-         <RouterContext {...renderProps} children={routes} history={Location} />
+         <Router {...renderProps} children={routes} history={Location} />
        </ContextHolder>,
        appContainer
      );
