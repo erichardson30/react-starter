@@ -12,10 +12,14 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './LoginPage.scss';
 import TextInput from '../UI/TextInput';
 import Button from '../UI/Button';
+import UserActions from '../../actions/UserActions';
+import UserStore from '../../stores/UserStore';
 
 const title = 'Log In';
 
 class LoginPage extends Component {
+
+    state = UserStore.getState();
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
@@ -25,14 +29,27 @@ class LoginPage extends Component {
     this.context.onSetTitle(title);
   }
 
+  emailChange = (val) => {
+      this.setState({email: val});
+  };
+  passChange = (val) => {
+      this.setState({password: val});
+  };
+
+  signin = () => {
+      UserActions.getUser(this.state);
+  };
+
   render() {
     return (
       <div className={s.root}>
         <div className={s.container}>
           <h1>{title}</h1>
-          <TextInput hintText="Email"/>
-          <TextInput hintText="Password"/>
-          <Button label="Sign in" />
+          <TextInput hintText="Email"
+              change={this.emailChange}/>
+          <TextInput hintText="Password"
+              change={this.passChange}/>
+          <Button label="Sign in" onSubmit={this.signin}/>
         </div>
       </div>
     );

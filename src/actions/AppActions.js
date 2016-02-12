@@ -24,6 +24,7 @@ class AppActions {
             } catch (err) {
                 console.log(err)
             }
+            return true;
     }
     getDataSuccess(data) {
         return data;
