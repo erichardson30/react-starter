@@ -19,7 +19,6 @@ class AppActions {
     getData() {
         try {
             let response = axios.get(url + '/posts').then((response) => {
-                    console.log(response.data);
                     this.getDataSuccess(response.data);
                 });
             } catch (err) {

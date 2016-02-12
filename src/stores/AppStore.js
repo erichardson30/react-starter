@@ -13,13 +13,14 @@ import AppActions from '../actions/AppActions';
 class AppStore {
     constructor() {
         this.bindActions(AppActions);
-        this.loading = false;
+        this.loaded = false;
         this.data = [];
         this.error = null
     }
 
     onGetDataSuccess(data) {
         this.data = data;
+        this.loaded = true;
     }
 }
 

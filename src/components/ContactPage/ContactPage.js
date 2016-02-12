@@ -6,13 +6,14 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
  */
- 
+
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ContactPage.scss';
 import AppStore from '../../stores/AppStore';
 import AppActions from '../../actions/AppActions';
 import DataContent from './DataContent';
+import Loader from 'react-loader';
 
 const title = 'Contact Us';
 
@@ -57,6 +58,7 @@ renderData() {
         <div className={s.container}>
           <h1>{title}</h1>
           <div>
+              <Loader loaded={this.state.loaded} />
               { this.renderData() }
           </div>
         </div>
