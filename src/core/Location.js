@@ -7,11 +7,9 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
-import createHistory from 'history/lib/createBrowserHistory';
-import createMemoryHistory from 'history/lib/createMemoryHistory';
-import useQueries from 'history/lib/useQueries';
+ import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
+ import { browserHistory, createMemoryHistory } from 'react-router';
 
-const location = useQueries(canUseDOM ? createHistory : createMemoryHistory)();
+ const location = canUseDOM ? browserHistory : createMemoryHistory();
 
-export default location;
+ export default location;
