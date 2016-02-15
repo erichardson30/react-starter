@@ -1,4 +1,4 @@
-## React Starter — "isomorphic" web app boilerplate
+## React Starter — "isomorphic" web app boilerplate with Flux implementation
 
 This React Starter was based off the React Starter Kit by Kriasoft and can be found [here](https://github.com/kriasoft/react-starter-kit)
 
@@ -7,8 +7,9 @@ This React Starter was based off the React Starter Kit by Kriasoft and can be fo
 > [React](https://facebook.github.io/react/) library,
 > [Node.js](https://nodejs.org/) / [Express](http://expressjs.com/) server
 > and [AltJs](http://alt.js.org) for managing data and implementing
-> the [Flux](http://facebook.github.io/flux/) architecture. Containing
-> modern web development tools such as [Webpack](http://webpack.github.io/),
+> the [Flux](http://facebook.github.io/flux/) architecture.
+> [Material UI](http://www.material-ui.com/) is being used for UI components.
+> Containing modern web development tools such as [Webpack](http://webpack.github.io/),
 > [Babel](http://babeljs.io/) and [BrowserSync](http://www.browsersync.io/).
 > Helping you to stay productive following the best practices. A solid starting
 > point for both professionals and newcomers to the industry.
