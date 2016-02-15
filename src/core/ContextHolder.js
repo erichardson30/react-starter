@@ -1,13 +1,4 @@
-/**
- * React Starter (https://github.com/erichardson30/react-starter)
- *
- * Copyright © 2016 Eric Richardson. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
- import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import emptyFunction from 'fbjs/lib/emptyFunction';
 
 class ContextHolder extends React.Component {
