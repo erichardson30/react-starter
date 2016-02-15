@@ -12,7 +12,7 @@ class Button extends Component {
                 <FlatButton label={this.props.label}
                     backgroundColor="grey"
                     onClick={this.handleClick}
-                    disabled={!this.props.disabled}/>
+                    disabled={this.props.disabled}/>
             </div>
         )
     }

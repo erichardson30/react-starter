@@ -12,14 +12,14 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './LoginPage.scss';
 import TextInput from '../UI/TextInput';
 import Button from '../UI/Button';
-import UserActions from '../../actions/UserActions';
-import UserStore from '../../stores/UserStore';
+import LogInActions from '../../actions/LogInActions';
+import LogInStore from '../../stores/LogInStore';
 
 const title = 'Log In';
 
 class LoginPage extends Component {
 
-    state = UserStore.getState();
+    state = LogInStore.getState();
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
@@ -37,7 +37,7 @@ class LoginPage extends Component {
   };
 
   signin = () => {
-      UserActions.getUser(this.state);
+      LogInActions.getUser(this.state);
   };
 
   render() {
@@ -49,7 +49,7 @@ class LoginPage extends Component {
               change={this.emailChange}/>
           <TextInput hintText="Password"
               change={this.passChange}/>
-          <Button label="Sign in" onSubmit={this.signin}/>
+          <Button label="Sign in" onSubmit={this.signin} disabled={false}/>
         </div>
       </div>
     );

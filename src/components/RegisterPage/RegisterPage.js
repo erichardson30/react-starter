@@ -12,13 +12,13 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './RegisterPage.scss';
 import TextInput from '../UI/TextInput';
 import Button from '../UI/Button';
-import UserActions from '../../actions/UserActions';
-import UserStore from '../../stores/UserStore';
+import SignUpActions from '../../actions/SignUpActions';
+import SignUpStore from '../../stores/SignUpStore';
 
 const title = 'New User Registration';
 
 class RegisterPage extends Component {
-    state = UserStore.getState();
+    state = SignUpStore.getState();
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
@@ -36,14 +36,14 @@ class RegisterPage extends Component {
   };
   confirmPassChange = (val) => {
       if (val === this.state.password) {
-          this.setState({passwordsMatch: true});
+          this.setState({passwordsNotMatch: false});
       } else {
-          this.setState({passwordsMatch: false});
+          this.setState({passwordsNotMatch: true});
       }
   };
 
   signup = () => {
-      UserActions.createUser(this.state);
+      SignUpActions.createUser(this.state);
   };
 
   render() {
@@ -57,8 +57,8 @@ class RegisterPage extends Component {
                   change={this.passChange}/>
               <TextInput hintText="Confirm Password"
                   change={this.confirmPassChange}/>
-              {(this.state.password != null && !this.state.passwordsMatch) ? <div>Passwords do not match</div> : null}
-              <Button label="Sign up" onSubmit={this.signup} disabled={this.state.passwordsMatch}/>
+              {(this.state.password != null && this.state.passwordsNotMatch) ? <div>Passwords do not match</div> : null}
+              <Button label="Sign up" onSubmit={this.signup} disabled={this.state.passwordsNotMatch}/>
         </div>
       </div>
     );

@@ -9,7 +9,7 @@
 
 import alt from '../core/alt';
 
-class UserActions {
+class LogInActions {
     constructor() {
         // put auto generate actions here
     }
@@ -18,9 +18,5 @@ class UserActions {
     getUser(data) {
         alert("email: " + data.email + " password: " + data.password);
     }
-    //sign up
-    createUser(data) {
-        alert("email: " + data.email + " password: " + data.password);
-    }
 }
-export default (alt.createActions(UserActions));
+export default (alt.createActions(LogInActions));

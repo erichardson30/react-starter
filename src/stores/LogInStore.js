@@ -8,26 +8,20 @@
  */
 
 import alt from '../core/alt';
-import UserActions from '../actions/UserActions';
+import LogInActions from '../actions/LogInActions';
 
-class UserStore {
+class LogInStore {
     constructor() {
-        this.bindActions(UserActions);
+        this.bindActions(LogInActions);
         this.email = null;
         this.password = null;
-        this.passwordsMatch = false;
         this.signedIn = false;
     }
 
     onGetUser(data) {
         this.signedIn = true;
         return true;
-    }
-
-    onCreateUser(data) {
-        this.signedIn = true;
-        return true;
-    }
+    }Í
 }
 
-export default alt.createStore(UserStore, 'UserStore');
+export default alt.createStore(LogInStore, 'LogInStore');
