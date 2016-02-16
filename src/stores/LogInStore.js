@@ -21,7 +21,7 @@ class LogInStore {
     onGetUser(data) {
         this.signedIn = true;
         return true;
-    }Í
+    }
 }
 
 export default alt.createStore(LogInStore, 'LogInStore');
