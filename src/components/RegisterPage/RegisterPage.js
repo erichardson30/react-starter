@@ -18,7 +18,12 @@ import SignUpStore from '../../stores/SignUpStore';
 const title = 'New User Registration';
 
 class RegisterPage extends Component {
-    state = SignUpStore.getState();
+
+    constructor(props) {
+        super(props);
+        this.state = SignUpStore.getState();
+        this.onChange = this.onChange.bind(this);
+    }
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
@@ -26,6 +31,15 @@ class RegisterPage extends Component {
 
   componentWillMount() {
     this.context.onSetTitle(title);
+    SignUpStore.listen(this.onChange);
+  }
+
+  componentWillUnmount() {
+      SignUpStore.unlisten(this.onChange);
+  }
+
+  onChange(state) {
+      this.setState(state);
   }
 
   emailChange = (val) => {

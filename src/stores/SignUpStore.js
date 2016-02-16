@@ -21,7 +21,6 @@ class SignUpStore {
 
     onCreateUser(data) {
         this.signedIn = true;
-        return true;
     }
 }
 

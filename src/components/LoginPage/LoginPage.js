@@ -19,7 +19,11 @@ const title = 'Log In';
 
 class LoginPage extends Component {
 
-    state = LogInStore.getState();
+    constructor(props) {
+        super(props);
+        this.state = LogInStore.getState();
+        this.onChange = this.onChange.bind(this);
+    }
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
@@ -27,6 +31,15 @@ class LoginPage extends Component {
 
   componentWillMount() {
     this.context.onSetTitle(title);
+    LogInStore.listen(this.onChange);
+  }
+
+  componentWillUnmount() {
+      LogInStore.unlisten(this.onChange);
+  }
+
+  onChange(state) {
+      this.setState(state);
   }
 
   emailChange = (val) => {

@@ -17,6 +17,7 @@ class SignUpActions {
     //sign up
     createUser(data) {
         alert("email: " + data.email + " password: " + data.password);
+        return true;
     }
 }
 export default (alt.createActions(SignUpActions));

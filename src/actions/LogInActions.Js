@@ -17,6 +17,7 @@ class LogInActions {
     //login
     getUser(data) {
         alert("email: " + data.email + " password: " + data.password);
+        return true;
     }
 }
 export default (alt.createActions(LogInActions));

@@ -20,7 +20,6 @@ class LogInStore {
 
     onGetUser(data) {
         this.signedIn = true;
-        return true;
     }
 }
 
