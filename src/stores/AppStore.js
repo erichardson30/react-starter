@@ -9,18 +9,29 @@
 
 import alt from '../core/alt';
 import AppActions from '../actions/AppActions';
+import AppSource from '../sources/AppSource';
 
 class AppStore {
     constructor() {
         this.bindActions(AppActions);
+        this.exportAsync(AppSource);
         this.loaded = false;
         this.data = [];
         this.error = null
     }
 
-    onGetDataSuccess(data) {
-        this.data = data;
+    onGetData(data) {
+        if (data === false) {
+            this.onFailed()
+        } else {
+            this.data = data;
+            this.loaded = true;
+        }
+    }
+
+    onFailed(err) {
         this.loaded = true;
+        this.error = "Data unavailable";
     }
 }
 

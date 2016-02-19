@@ -23,7 +23,7 @@ class ContactPage extends Component {
     constructor(props) {
         super(props);
         this.state = AppStore.getState();
-        AppActions.getData();
+        // AppActions.getData();
         this.onChange = this.onChange.bind(this);
     }
 

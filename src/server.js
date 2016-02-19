@@ -12,12 +12,18 @@ import path from 'path';
 import express from 'express';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
+
 import { match, RouterContext } from 'react-router';
-import assets from './assets';
-import { port } from './config';
 import routes from './routes';
 import ContextHolder from './core/ContextHolder';
+
 import Html from './components/Html';
+import assets from './assets';
+import { port } from './config';
+
+import alt from './core/alt';
+import Iso from 'iso';
+
 
 const server = global.server = express();
 
@@ -54,12 +60,20 @@ server.get('*', async (req, res, next) => {
         onSetMeta: (key, value) => data[key] = value,
         onPageNotFound: () => statusCode = 404,
       };
-      data.body = ReactDOM.renderToString(
-        <ContextHolder context={context}>
-          <RouterContext {...renderProps}/>
-        </ContextHolder>
+
+      const iso = new Iso();
+
+      iso.add(
+          ReactDOM.renderToString(
+              <ContextHolder context={context}>
+                  <RouterContext {...renderProps}/>
+              </ContextHolder>
+          ),
+          alt.flush()
       );
+      data.body = iso.render();
       data.css = css.join('');
+
       const html = ReactDOM.renderToStaticMarkup(<Html {...data} />);
       res.status(statusCode).send(`<!doctype html>\n${html}`);
     });

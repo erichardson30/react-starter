@@ -16,6 +16,7 @@ import ContactPage from './components/ContactPage';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
+import AppStore from './stores/AppStore';
 
 async function getContextComponent(location, callback) {
   const response = await fetch(`/api/content?path=${location.pathname}`);
@@ -24,11 +25,15 @@ async function getContextComponent(location, callback) {
   callback(null, () => <ContentPage {...content} />);
 }
 
+const getData = async (location, callback) => {
+    await AppStore.fetchData();
+    callback(null, () => <ContactPage />)
+}
 export default (
   <Route>
     <Route path="/" component={App}>
       <IndexRoute getComponent={getContextComponent} />
-      <Route path="contact" component={ContactPage} />
+      <Route path="contact" getComponent={getData} />
       <Route path="login" component={LoginPage} />
       <Route path="register" component={RegisterPage} />
       <Route path="about" getComponent={getContextComponent} />
