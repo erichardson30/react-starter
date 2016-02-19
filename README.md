@@ -33,6 +33,8 @@ This React Starter was based off the React Starter Kit by Kriasoft and can be fo
 │   ├── /content/               # Static content (plain HTML or Markdown, Jade, you name it)
 │   ├── /core/                  # Core framework and utility functions
 │   ├── /public/                # Static files which are copied into the /build/public folder
+│   ├── /services/              # Services contain the calls to an API for data fetching
+│   ├── /sources/               # Sources are the middle man between the service and store invoking the action 
 │   ├── /stores/                # Stores contain the application state and logic
 │   ├── /client.js              # Client-side startup script
 │   ├── /config.js              # Global application settings

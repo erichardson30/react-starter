@@ -37,19 +37,29 @@ based `axios` module that can be used to make
 as well as [http](https://nodejs.org/api/http.html) requests from node.js. It automatically
 transforms for JSON data and protects the client side against [XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery)
 
-#### Data fetching to an external API should all take place in the action
+#### Data fetching to an external API should start in the router
+##### The router should make a call to the store which invokes a function from the source
+##### The source calls the API and returns the data invoking the action and returning the data to the store
 
+routes.js :
 ```jsx
-import axios from 'axios';
-const url = 'http://jsonplaceholder.typicode.com';
-getData() {
-    try {
-        let response = axios.get(url + '/posts').then((response) => {
-                console.log(response.data);
-                this.getDataSuccess(response.data);
-            });
-        } catch (err) {
-            console.log(err)
-        }
+const getData = async (location, callback) => {
+    await AppStore.fetchData();
+    callback(null, () => <ContactPage />)
+}
+```
+AppSource.js :
+```jsx
+fetchData() {
+    return {
+        async remote(state) {
+            return Api.getData()
+        },
+
+        shouldFetch(state) {
+            return (state.data.length == 0);
+        },
+        success: AppActions.getData
+    }
 }
 ```
