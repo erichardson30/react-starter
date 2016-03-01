@@ -16,4 +16,4 @@ let AppSource = {
     }
 };
 
-export default AppSource
+export default AppSource;
